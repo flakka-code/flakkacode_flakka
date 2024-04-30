@@ -6,3 +6,6 @@ breaking:
 lint:
   use:
     - DEFAULT
+  allow_comment_ignores: true
+deps:
+  - buf.build/bufbuild/buf
