@@ -1,6 +1,7 @@
 syntax = 'proto3';
 
-package flakka.alpha.v1;
+// buf:lint:ignore FILE_SAME_PACKAGE
+package flakka.alpha.v1alpha1;
 
 //
 message FileOptions {
