@@ -1,0 +1,76 @@
+syntax = 'proto3';
+
+package flakka.build.fixture.v1alpha1;
+
+message ModuleFixture {
+  string name = 1;
+  repeated AggregateFixture aggregate = 10;
+}
+
+message AggregateFixture {
+  string name = 1;
+  string package = 2;
+  repeated EntityFixture entity = 10;
+}
+
+message EntityFixture {
+  string name = 1;
+  MutationFixture mutation = 2;
+  ProjectionFixture projection = 3;
+}
+
+// Mutation
+
+message MutationFixture {
+  repeated DispatchCommandFixture dispatch_command = 10;
+  StateFixture state = 2;
+}
+
+message DispatchCommandFixture {
+  string name = 1;
+  CommandFixture command = 2;
+  ErrorFixture error = 3;
+}
+
+message CommandFixture {}
+
+message ErrorFixture {
+  string label = 1;
+}
+
+message StateFixture {
+  repeated StateVariantFixture variant = 1;
+}
+
+message StateVariantFixture {
+  string name = 1;
+}
+
+// Projection
+
+message ProjectionFixture {
+  repeated ViewQueryFixture view_query = 1;
+  ViewStateFixture view_state = 2;
+}
+
+message ViewQueryFixture {
+  string name = 1;
+  QueryFixture query = 2;
+  ViewResultFixture result = 3;
+}
+
+message QueryFixture {}
+
+message ViewResultFixture {}
+
+message ViewStateFixture {}
+
+// Event
+
+message EventFixture {
+  repeated EventVariantFixture variant = 1;
+}
+
+message EventVariantFixture {
+  string name = 1;
+}
