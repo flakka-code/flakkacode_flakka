@@ -1,0 +1,32 @@
+// Copyright 2022 Lightbend Inc.
+
+syntax = "proto3";
+
+package flakka.alpha.build.v1alpha2;
+
+import "google/protobuf/descriptor.proto";
+
+// Views configuration for a gRPC method.
+//message View {
+//  oneof update_or_query {
+//    Query query = 2;
+//  }
+//  message Query {
+//    // A query that gets executed when this call is executed.
+//    //
+//    // This query is used to know how the view should be indexed.
+//    string query = 3;
+//    // Whether query results should be passed to the user service for further
+//    // processing before being returned to the client.
+//    //
+//    // By default (false), the user service does not process query results.
+//    bool transform_results = 4;
+//    // If enabled, initially, the normal query results are returned, but the stream
+//    // does not complete once the full result has been streamed, instead the stream
+//    // is kept open and updates and new entries added to the view are streamed.
+//    //
+//    // Can only be used for (stream) return values.
+//    bool stream_updates = 5;
+//  }
+//  // JSON input schemas, used for views that accept JSON events, view states, queries and query results
+//}

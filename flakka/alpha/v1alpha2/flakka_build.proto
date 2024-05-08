@@ -1,0 +1,54 @@
+syntax = 'proto3';
+
+// buf:lint:ignore FILE_SAME_PACKAGE
+package flakka.alpha.v1alpha2;
+
+//
+message FileOptions {
+  // aggregate root build parameters.
+  AggregateRootDecl aggregate_root = 1;
+}
+
+//
+message AggregateRootDecl {
+  repeated EntityDecl entity = 1;
+}
+
+//
+message RouteMatch {}
+
+//
+message EntityDecl {
+  // A mandatory name for the aggregate root - used for type name generation
+  repeated MutationDecl mutation = 3;
+  repeated ProjectionDecl projection = 4;
+  repeated EventDecl event = 7;
+}
+
+//
+message MutationDecl {
+  string name = 1;
+//  repeated CommandDecl
+  repeated StateDecl state = 5;
+}
+
+//
+message StateDecl {
+  string name = 1;
+}
+
+//
+message ProjectionDecl {
+  string name = 1;
+  repeated ViewStateDecl view_state = 6;
+}
+
+//
+message ViewStateDecl {
+  string name = 1;
+}
+
+//
+message EventDecl {
+  string name = 1;
+}
