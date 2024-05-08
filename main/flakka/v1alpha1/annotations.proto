@@ -2,17 +2,17 @@
 
 syntax = "proto3";
 
-package flakka.alpha.build.v1alpha2;
+package flakka.v1alpha1;
 
 import "google/protobuf/descriptor.proto";
 //import "kalix/acl.proto";
-import "flakka/alpha/v1alpha2/component.proto";
-import "flakka/alpha/v1alpha2/eventing.proto";
+import "flakka/v1alpha1/component.proto";
+//import "flakka/v1alpha1/eventing.proto";
 //import "kalix/jwt.proto";
 //import "kalix/keygenerator.proto";
 //import "kalix/triggers.proto";
 //import "kalix/views.proto";
-//import "flakka/alpha/v1alpha2/views.proto";
+//import "flakka/v1alpha1/views.proto";
 
 message FieldOptions {
   // Extension for specifying which field in a message is to be considered an

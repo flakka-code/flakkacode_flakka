@@ -1,10 +1,10 @@
 syntax = 'proto3';
 
 // buf:lint:ignore FILE_SAME_PACKAGE
-package flakka.alpha.v1alpha2;
+package flakka.v1alpha1;
 
 //
-message FileOptions {
+message FlakkaFileOptions {
   // aggregate root build parameters.
   AggregateRootDecl aggregate_root = 1;
 }

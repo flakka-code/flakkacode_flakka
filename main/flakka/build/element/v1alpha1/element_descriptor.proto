@@ -1,6 +1,6 @@
 syntax = 'proto3';
 
-package flakka.alpha.build.element.v1alpha1;
+package flakka.build.element.v1alpha1;
 
 import 'buf/alpha/image/v1/image.proto';
 import 'google/protobuf/descriptor.proto';
@@ -17,7 +17,7 @@ message ModuleElement {
 ///
 message AggregateElement {
   ///
-  buf.alpha.image.v1.ImageFile imageFile = 1;
+  buf.alpha.image.v1.ImageFile image_file = 1;
 
   ///
   repeated EntityElement entity = 2;
@@ -26,7 +26,7 @@ message AggregateElement {
 ///
 message EntityElement {
   ///
-  buf.alpha.image.v1.ImageFile imageFile = 1;
+  buf.alpha.image.v1.ImageFile image_file = 1;
 
   ///
   MutationElement mutation = 2;
@@ -42,10 +42,10 @@ message MutationElement {
   google.protobuf.ServiceDescriptorProto descriptor = 1;
 
   ///
-  repeated buf.alpha.image.v1.ImageFile imageFile = 2;
+  repeated buf.alpha.image.v1.ImageFile image_file = 2;
 
   ///
-  repeated DispatchCommandElement dispatchCommand = 3;
+  repeated DispatchCommandElement dispatch_command = 3;
 
   ///
   StateElement state = 4;
@@ -63,22 +63,22 @@ message DispatchCommandElement {
 ///
 message CommandElement {
   ///
-  google.protobuf.DescriptorProto messageDescriptorProto = 1;
+  google.protobuf.DescriptorProto message_descriptor_proto = 1;
 }
 
 ///
 message ErrorElement {
   ///
-  google.protobuf.DescriptorProto messageDescriptorProto = 1;
+  google.protobuf.DescriptorProto message_descriptor_proto = 1;
 }
 
 ///
 message StateElement {
   ///
-  google.protobuf.DescriptorProto messageDescriptorProto = 1;
+  google.protobuf.DescriptorProto message_descriptor_proto = 1;
 
   ///
-  repeated buf.alpha.image.v1.ImageFile imageFile = 2;
+  repeated buf.alpha.image.v1.ImageFile image_file = 2;
 }
 
 /////
@@ -87,7 +87,7 @@ message StateElement {
 //  google.protobuf.ServiceDescriptorProto descriptor = 1;
 //
 //  ///
-//  repeated buf.alpha.image.v1.ImageFile imageFile = 2;
+//  repeated buf.alpha.image.v1.ImageFile image_file = 2;
 //
 //  ///
 //  ViewStateDescriptor viewState = 3;
@@ -116,12 +116,12 @@ message StateElement {
 
 //
 message EventEnvelopeElement {
-  buf.alpha.image.v1.ImageFile imageFile = 1;
-  EventElement eventDescriptor = 2;
+  buf.alpha.image.v1.ImageFile image_file = 1;
+  EventElement event_descriptor = 2;
 }
 
 //
 message EventElement {
-  buf.alpha.image.v1.ImageFile imageFile = 1;
-  google.protobuf.DescriptorProto messageDescriptorProto = 2;
+  buf.alpha.image.v1.ImageFile image_file = 1;
+  google.protobuf.DescriptorProto message_descriptor_proto = 2;
 }

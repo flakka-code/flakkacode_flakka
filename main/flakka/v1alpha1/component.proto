@@ -4,7 +4,7 @@
 
 syntax = "proto3";
 
-package flakka.alpha.build.v1alpha2;
+package flakka.v1alpha1;
 
 //// Options to describe an Action
 //message ActionDef {

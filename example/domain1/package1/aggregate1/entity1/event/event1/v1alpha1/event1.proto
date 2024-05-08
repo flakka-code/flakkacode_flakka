@@ -1,0 +1,9 @@
+syntax = 'proto3';
+
+package domain1.package1.aggregate1.entity1.event.event1.v1alpha1;
+
+import "flakka/v1alpha1/annotations.proto";
+
+option (flakka.v1alpha1.file) = {};
+
+message Entity1Event1 {}

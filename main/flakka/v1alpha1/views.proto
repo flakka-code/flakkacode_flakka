@@ -2,9 +2,9 @@
 
 syntax = "proto3";
 
-package flakka.alpha.build.v1alpha2;
+package flakka.v1alpha1;
 
-import "google/protobuf/descriptor.proto";
+//import "google/protobuf/descriptor.proto";
 
 // Views configuration for a gRPC method.
 //message View {

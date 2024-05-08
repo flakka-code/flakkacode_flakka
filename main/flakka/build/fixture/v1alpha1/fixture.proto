@@ -1,6 +1,6 @@
 syntax = 'proto3';
 
-package flakka.alpha.build.test.v1alpha1;
+package flakka.build.fixture.v1alpha1;
 
 message ModuleFixture {
   string name = 1;
