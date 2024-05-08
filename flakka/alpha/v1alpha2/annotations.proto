@@ -30,7 +30,7 @@ message FileOptions {
 //  ReplicatedEntity replicated_entity = 3;
   // Event sourced entity configuration.
   EntityMutation mutation = 4;
-  EntityState state = 4;
+  EntityState state = 5;
 }
 
 //message MethodOptions {

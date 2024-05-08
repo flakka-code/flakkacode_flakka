@@ -250,4 +250,3 @@ message EntityEventEnvelope {
 //
 //// Options specific to replicated votes
 //message ReplicatedVote {}
-`
