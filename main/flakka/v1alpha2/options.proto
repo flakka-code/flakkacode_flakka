@@ -1,0 +1,15 @@
+// All extension points for Flakka
+
+syntax = "proto3";
+
+package flakka.v1alpha1;
+
+import "flakka/build/spec/v1alpha1/spec.proto";
+import "flakka/v1alpha1/component.proto";
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.FileOptions {
+  build.spec.v1alpha1.AggregateSpec aggregate = 485732;
+  build.spec.v1alpha1.EventEnvelopeFileSpec event_envelope = 485742;
+  build.spec.v1alpha1.EventFileSpec event = 485743;
+}

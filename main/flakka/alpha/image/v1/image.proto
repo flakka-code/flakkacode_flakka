@@ -1,0 +1,19 @@
+syntax = 'proto3';
+package flakka.image.v1;
+
+import "buf/alpha/image/v1/image.proto";
+import "google/protobuf/descriptor.proto";
+//message Image {
+//  repeated ImageFile file = 1;
+//}
+//message ImageFile {
+//  buf.alpha.image.v1.ImageFile descriptor
+//}
+// Image is an ext FileDescriptorSet.
+//
+// See https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto
+
+message FlakkaImage {
+  repeated buf.alpha.image.v1.ImageFile file = 1;
+}
+message AggregateImageFile {}

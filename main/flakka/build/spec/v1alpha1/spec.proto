@@ -1,0 +1,111 @@
+syntax = 'proto3';
+
+package flakka.build.spec.v1alpha1;
+
+//
+message AggregateVersionDef {
+  // package name, including aggregate name
+  string package = 1;
+  // name for the aggregate. - 'aggregate1'
+  string aggregate_name = 2;
+  // version identifier - 'v1alpha1'
+  string version_id = 4;
+
+  repeated EntityDecl entity = 10;
+  message EntityDecl {
+    string name = 1;
+  }
+}
+//
+message AggregateVersion {
+  // package name, including aggregate name
+  string package = 1;
+  // name for the aggregate. - 'aggregate1'
+  string aggregate_name = 2;
+  // version identifier - 'v1alpha1'
+  string version_id = 4;
+
+  repeated EntityDecl entity = 10;
+  message EntityDecl {
+    string name = 1;
+
+  }
+}
+//
+message EntityVersionDef {
+  // package name, including aggregate name
+  string package = 1;
+  // name for the aggregate. - 'aggregate1'
+  string aggregate_name = 2;
+  // version identifier - 'v1alpha1'
+  string version_id = 4;
+
+  repeated Entity entity = 10;
+  message Entity {
+    string name = 1;
+    MutationSpec mutation = 2;
+    ProjectionSpec projection = 3;
+  }
+}
+
+// Event
+
+message EventEnvelopeFileSpec {
+  repeated EventSpec variant = 1;
+}
+
+message EventFileSpec {}
+
+////
+
+message ModuleSpec {
+  string name = 1;
+  repeated AggregateSpec aggregate = 10;
+}
+
+
+// Mutation
+
+message MutationSpec {
+  repeated DispatchCommandSpec dispatch_command = 10;
+  StateSpec state = 2;
+}
+
+message DispatchCommandSpec {
+  string name = 1;
+  CommandSpec command = 2;
+  ErrorSpec error = 3;
+}
+
+message CommandSpec {}
+
+message ErrorSpec {
+  string label = 1;
+}
+
+message StateSpec {
+  repeated StateVariantSpec variant = 1;
+}
+
+message StateVariantSpec {
+  string name = 1;
+}
+
+// Projection
+
+message ProjectionSpec {
+  repeated ViewQuerySpec view_query = 1;
+  ViewStateSpec view_state = 2;
+}
+
+message ViewQuerySpec {
+  string name = 1;
+  QuerySpec query = 2;
+  ViewResultSpec result = 3;
+}
+
+message QuerySpec {}
+
+message ViewResultSpec {}
+
+message ViewStateSpec {}

@@ -1,0 +1,24 @@
+syntax = 'proto3';
+
+package domain1.package1.aggregate1.entity1.event.v1;
+
+import "buf/validate/validate.proto";
+import "domain1/package1/aggregate1/entity1/event/event1/v1/entity1_event1.proto";
+import "flakka/v1alpha2/options.proto";
+import "google/protobuf/timestamp.proto";
+
+option (flakka.v1alpha1.event_envelope) = {
+  variant: [
+    {name: "event1"}]
+};
+
+message Entity1Event {
+  string id = 1;
+  string subject = 2;
+  google.protobuf.Timestamp time = 3;
+  bytes uuid_key = 4 [(buf.validate.field).bytes.len = 4];
+  oneof payload {
+    option (buf.validate.oneof).required = true;
+    event1.v1.Entity1Event1 event1 = 10;
+  }
+}

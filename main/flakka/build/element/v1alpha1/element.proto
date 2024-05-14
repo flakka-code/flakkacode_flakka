@@ -4,7 +4,7 @@ package flakka.build.element.v1alpha1;
 
 import 'buf/alpha/image/v1/image.proto';
 import 'google/protobuf/descriptor.proto';
-
+import 'flakka/build/spec/v1alpha1/spec.proto';
 ///
 message ModuleElement {
   ///
@@ -33,7 +33,7 @@ message EntityElement {
 
   //  ///
   //  ProjectionDescriptor projection = 3;
-  repeated EventElement event = 4;
+  repeated EventElementFile event = 4;
 }
 
 ///
@@ -115,13 +115,23 @@ message StateElement {
 //message ViewStateDescriptor {}
 
 //
-message EventEnvelopeElement {
+message EventEnvelopeFile {
+  // The image file for this element
   buf.alpha.image.v1.ImageFile image_file = 1;
-  EventElement event_descriptor = 2;
+  // Back-reference to the package-name of the entity this event belongs to
+  string part_of = 2;
+  // spec for this event envelope
+  spec.v1alpha1.EventEnvelopeFileSpec spec = 3;
+  // the primary (only?) message for this file
+//  google.protobuf.DescriptorProto descriptor = 4;
 }
 
 //
-message EventElement {
+message EventElementFile {
+  // The image file for this element
   buf.alpha.image.v1.ImageFile image_file = 1;
-  google.protobuf.DescriptorProto message_descriptor_proto = 2;
+  // the package-name of the entity this event belongs to
+  string part_of = 2;
+  // the primary (only?) message for this file
+  google.protobuf.DescriptorProto descriptor = 3;
 }

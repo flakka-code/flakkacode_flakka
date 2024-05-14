@@ -4,15 +4,29 @@ syntax = "proto3";
 
 package flakka.v1alpha1;
 
-import "google/protobuf/descriptor.proto";
+import "flakka/build/spec/v1alpha1/spec.proto";
 //import "kalix/acl.proto";
 import "flakka/v1alpha1/component.proto";
+import "google/protobuf/descriptor.proto";
 //import "flakka/v1alpha1/eventing.proto";
 //import "kalix/jwt.proto";
 //import "kalix/keygenerator.proto";
 //import "kalix/triggers.proto";
 //import "kalix/views.proto";
 //import "flakka/v1alpha1/views.proto";
+
+//message EventFileOptions {
+//  // Event sourced entity configuration.
+//  EventSourcedEntity event_sourced_entity = 1;
+//  //  // Value entity configuration.
+//  //  ValueEntity value_entity = 2;
+//  //  // Replicated entity configuration.
+//  //  ReplicatedEntity replicated_entity = 3;
+//  // Event sourced entity configuration.
+//  EntityMutation mutation = 4;
+//  EntityState state = 5;
+//}
+
 
 message FieldOptions {
   // Extension for specifying which field in a message is to be considered an
@@ -24,10 +38,10 @@ message FieldOptions {
 message FileOptions {
   // Event sourced entity configuration.
   EventSourcedEntity event_sourced_entity = 1;
-//  // Value entity configuration.
-//  ValueEntity value_entity = 2;
-//  // Replicated entity configuration.
-//  ReplicatedEntity replicated_entity = 3;
+  //  // Value entity configuration.
+  //  ValueEntity value_entity = 2;
+  //  // Replicated entity configuration.
+  //  ReplicatedEntity replicated_entity = 3;
   // Event sourced entity configuration.
   EntityMutation mutation = 4;
   EntityState state = 5;
@@ -81,10 +95,10 @@ message FileOptions {
 extend google.protobuf.FieldOptions {
   FieldOptions field = 1080;
 }
-
-extend google.protobuf.FileOptions {
-  FileOptions file = 1080;
-}
+//
+//extend google.protobuf.FileOptions {
+//  FileOptions file = 1080;
+//}
 
 //extend google.protobuf.MethodOptions {
 //  MethodOptions method = 1080;

@@ -4,5 +4,10 @@ deps:
   - remote: buf.build
     owner: bufbuild
     repository: buf
-    commit: e3f5305297564e3299422a3a3763bda0
-    digest: shake256:8df94e6dab632513389ac821908b5c0871c1491eca413d862a2c37668ff7a1c73cb0a51903faed9e376394835b7e46f37b2fbee2f435e23ddd261fe16839e7b4
+    commit: b15d5e4588ab46d38e08ea9f1a681d46
+    digest: shake256:662bf6e60267cc402fc64aecbb5d194f4b994accdce81afc9d188a1e530d1b3fed03ac73c7a4c3121ffb3b53879dfeae1feec9f164fb734ba1f84e070d8d99dc
+  - remote: buf.build
+    owner: bufbuild
+    repository: protovalidate
+    commit: 46a4cf4ba1094a34bcd89a6c67163b4b
+    digest: shake256:436ce453801917c11bc7b21d66bcfae87da2aceb804a041487be1e51dc9fbc219e61ea6a552db7a7aa6d63bb5efd0f3ed5fe3d4c42d4f750d0eb35f14144e3b6
