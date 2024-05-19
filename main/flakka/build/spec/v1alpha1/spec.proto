@@ -51,7 +51,7 @@ message EntityVersionDef {
 // Event
 
 message EventEnvelopeFileSpec {
-  repeated EventSpec variant = 1;
+//  repeated EventSpec variant = 1;
 }
 
 message EventFileSpec {}
@@ -60,7 +60,7 @@ message EventFileSpec {}
 
 message ModuleSpec {
   string name = 1;
-  repeated AggregateSpec aggregate = 10;
+//  repeated AggregateSpec aggregate = 10;
 }
 
 

@@ -10,4 +10,3 @@ lint:
 deps:
   - buf.build/bufbuild/buf
   - buf.build/bufbuild/protovalidate
-#  - buf.build/protocolbuffers/wellknowntypes

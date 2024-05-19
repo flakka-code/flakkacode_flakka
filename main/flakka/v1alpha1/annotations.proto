@@ -4,10 +4,10 @@ syntax = "proto3";
 
 package flakka.v1alpha1;
 
-import "flakka/build/spec/v1alpha1/spec.proto";
+//import "flakka/build/spec/v1alpha1/spec.proto";
 //import "kalix/acl.proto";
 import "flakka/v1alpha1/component.proto";
-import "google/protobuf/descriptor.proto";
+//import "google/protobuf/descriptor.proto";
 //import "flakka/v1alpha1/eventing.proto";
 //import "kalix/jwt.proto";
 //import "kalix/keygenerator.proto";
@@ -92,9 +92,9 @@ message FileOptions {
 //  }
 //}
 
-extend google.protobuf.FieldOptions {
-  FieldOptions field = 1080;
-}
+//extend google.protobuf.FieldOptions {
+//  FieldOptions field = 1080;
+//}
 //
 //extend google.protobuf.FileOptions {
 //  FileOptions file = 1080;
